@@ -1,3 +1,4 @@
+date=$(date +%d-%m-%y)
 calculate_20percenttaxdue()
 {
 taxr=20
@@ -57,5 +58,6 @@ echo "save results y or n?"
 read saveresults
 
 if [ $saveresults = "y" ]; then
-echo "you earned $salary, your tax breakdown is as follows tax due at standard rate = $taxat20, tax due at higher rate = $taxat40, tax due at additional rate = $taxat45. Your total tax due is $total "> report.txt
+filename="reportgeneratedon$date"
+echo "you earned $salary, your tax breakdown is as follows tax due at standard rate = $taxat20, tax due at higher rate = $taxat40, tax due at additional rate = $taxat45. Your total tax due is $total "> $filename.txt
 fi
